@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Giới thiệu tỉnh Tuyên Quang</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #ff512f, #dd2476);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 30px;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            text-shadow: 1px 1px 2px #000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+        }
+
+        .section {
+            background: linear-gradient(135deg, #f6d365, #fda085);
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+            color: #222;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            color: #ff512f;
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #dd2476;
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #d4145a;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 15px 0;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        @media(max-width: 600px) {
+            header {
+                font-size: 24px;
+                padding: 30px 10px;
+            }
+
+            .section {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        GIỚI THIỆU TỈNH TUYÊN QUANG
+    </header>
+
+    <div class="container">
+
+        <div class="section">
+            <h2>1. Vị trí địa lý</h2>
+            <p>Tuyên Quang thuộc vùng Đông Bắc Việt Nam, tiếp giáp các tỉnh Hà Giang, Cao Bằng, Bắc Kạn, Yên Bái, Lào Cai, Phú Thọ và Vĩnh Phúc.</p>
+            <img src="https://bankervn.com/wp-content/uploads/2024/11/Ban-do-cac-huyen-Tuyen-Quang.jpg" alt="Bản đồ Tuyên Quang">
+        </div>
+
+        <div class="section">
+            <h2>2. Đặc điểm tự nhiên</h2>
+            <p>Tuyên Quang có nhiều đồi núi thấp, hai con sông chính là sông Lô và sông Gâm. Khí hậu mát mẻ, dễ chịu.</p>
+            <img src="https://khodulieu.sohoa.tuyenquang.gov.vn/congthongtin/media/291fc3c2f13481013c0029bd1e8a39cf.jpg" alt="Du lịch Tuyên Quang">
+        </div>
+
+        <div class="section">
+            <h2>3. Lịch sử - Văn hóa</h2>
+            <p>Tuyên Quang là “Thủ đô Khu giải phóng – Thủ đô Kháng chiến”. Nhiều dân tộc sinh sống như: Tày, Nùng, Dao, Mông, Sán Dìu…</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Du lịch nổi bật</h2>
+            <ul>
+                <li>Na Hang – Lâm Bình (Hạ Long giữa đại ngàn)</li>
+                <img src="https://cdnmedia.baotintuc.vn/Upload/CCcQv1fjdlI5Hob1jh0mA/files/2020/11/05/Lambinh/lambinh.jpg" alt="Na Hang – Lâm Bình">
+                <li>ATK Tân Trào</li>
+                <img src="https://dulichtuyenquang.vn/media/images/2022/dtlannalua.jpg" alt="ATK Tân Trào">
+                <li>Đền Hạ – Đền Thượng – Đền Ỷ La</li>
+                <img src="https://statics.vinpearl.com/san-den-y-lan-tuyen-quang_1734502925.jpg" alt="Đền Hạ – Đền Thượng – Đền Ỷ La">
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Kinh tế – xã hội</h2>
+            <p>Thế mạnh: lâm nghiệp, thủy điện, nông nghiệp và du lịch sinh thái. Sản phẩm nổi tiếng: cam sành Hàm Yên, chè Shan tuyết, miến dong.</p>
+            <img src="https://thiennhienmoitruong.vn/upload/images/btv/btv6.4/btv-6.4.4/mua-cam-ha-giang-vao-thang-may-6.jpg" alt="Cam sành Hàm Yên">
+        </div>
+
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+
+        function revealSections() {
+            const triggerBottom = window.innerHeight * 0.85;
+
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+
+                if(sectionTop < triggerBottom) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealSections);
+        window.addEventListener('load', revealSections);
+    </script>
+
+</body>
+</html>

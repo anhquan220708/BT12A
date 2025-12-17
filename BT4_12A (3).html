@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Dân tộc Sán Chí – Sinh động & Độc đáo</title>
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/f/f4/San_Chay_embroidery_pattern.jpg') repeat;
+    background-size: 300px;
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: rgba(30, 60, 114, 0.9);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    overflow: hidden;
+}
+header h1 {
+    font-size: 3em;
+    animation: fadeInDown 1s ease forwards;
+    opacity: 0;
+}
+header p {
+    font-size: 1.2em;
+    animation: fadeInUp 1s ease 0.5s forwards;
+    opacity: 0;
+}
+
+/* NAV */
+nav {
+    background: rgba(42, 82, 152, 0.95);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+}
+nav a {
+    color: white;
+    margin: 0 18px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+nav a:hover {
+    background: rgba(30, 60, 114, 0.9);
+}
+
+/* SECTION */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #1e3c72;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.source {
+    font-size: 12px;
+    color: #555;
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+footer {
+    background: rgba(42, 82, 152, 0.95);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ANIMATION */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px);}
+    100% { opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Dân tộc Sán Chí</h1>
+    <p>Văn hóa đặc sắc và cuộc sống độc đáo của người Sán Chí</p>
+</header>
+
+<nav>
+    <a href="#home">Trang chủ</a>
+    <a href="#lichsu">Lịch sử</a>
+    <a href="#vanhoa">Văn hóa</a>
+    <a href="#trangphuc">Trang phục</a>
+</nav>
+
+<section id="home">
+    <h2>Khám phá dân tộc Sán Chí</h2>
+    <p>Dân tộc Sán Chí là một trong 54 dân tộc Việt Nam, cư trú chủ yếu tại các tỉnh Tuyên Quang, Thái Nguyên, Bắc Giang, Quảng Ninh. Người Sán Chí nổi bật với ngôn ngữ riêng, phong tục đặc sắc và các lễ hội truyền thống độc đáo.</p>
+    <section id="trangphuc">
+  <h2>Trang phục truyền thống</h2>
+  <p>Phụ nữ Sán Chí mặc áo dài chàm, …</p>
+
+  <!-- Ảnh bấm dẫn đến trang khác -->
+  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedia.chinhphu.vn%2Fruc-ro-sac-mau-dan-toc-san-chi-102221205120208456.htm&psig=AOvVaw1vkKPzh2URLR5QOr7y0hgS&ust=1763523293575000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNiu-q7i-pADFQAAAAAdAAAAABAE" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/San_Chay_women_in_traditional_costume.jpg"
+         alt="Trang phục nữ Sán Chí">
+  </a>
+  <div class="source">Nguồn ảnh: Wikimedia Commons. Liên kết: chinhphu.vn</div>
+
+  <!-- Ảnh nam cũng có thể bấm -->
+  <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedia.chinhphu.vn%2Fruc-ro-sac-mau-dan-toc-san-chi-102221205120208456.htm&psig=AOvVaw1vkKPzh2URLR5QOr7y0hgS&ust=1763523293575000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNiu-q7i-pADFQAAAAAdAAAAABAE" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/S%C3%A1n_Chay_people%2C_Vietnam_2.jpg"
+         alt="Trang phục nam Sán Chí">
+  </a>
+  <div class="source">Nguồn ảnh: Wikimedia Commons. Liên kết: chinhphu.vn</div>
+
+   </section>
+
+<section id="lichsu">
+    <h2>Lịch sử dân tộc</h2>
+    <p>Người Sán Chí có nguồn gốc lâu đời, sinh sống tập trung ở các vùng núi và trung du phía Bắc Việt Nam. Họ giữ gìn phong tục, ngôn ngữ và tín ngưỡng dân gian truyền thống.</p>
+    
+    <!-- Hình ảnh có thể nhấp vào để mở trang chi tiết về Làng Sán Chí -->
+    <a href="https://vov.vn/van-hoa/doc-dao-le-cap-sac-cua-nguoi-san-chi-o-cao-bang-post1090850.vov" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/12/San_Chay_village.jpg" alt="Làng Sán Chí">
+    </a>
+    <div class="source">Nguồn: Wikimedia Commons. Liên kết: VOV.vn</div>
+</section>
+
+<section id="vanhoa-lehoi">
+    <h2>Văn hóa & Lễ hội của người Sán Chí</h2>
+    <p>
+        Văn hóa của người Sán Chí gắn liền với đời sống nương rẫy, qua các làn điệu dân ca 
+        <b>Sấng Cọ</b>, phong tục cưới hỏi, nghi lễ vòng đời và tín ngưỡng thờ cúng tổ tiên. 
+        Các lễ hội của họ mang đậm bản sắc, thể hiện tinh thần đoàn kết và niềm tin văn hóa truyền thống.
+    </p>
+
+    <!-- Ảnh 1 – Nhấn để xem ảnh lớn -->
+    <a href="https://upload.wikimedia.org/wikipedia/commons/7/74/S%C3%A1n_Chay_people%2C_Vietnam_1.jpg" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/S%C3%A1n_Chay_people%2C_Vietnam_1.jpg"
+             alt="Lễ hội truyền thống của người Sán Chí">
+    </a>
+    <div class="source">Nguồn ảnh: Wikimedia Commons</div>
+
+    <p>
+        Trong các dịp festival và hội làng, người Sán Chí thường tổ chức múa hát, giao duyên, 
+        diễn xướng dân gian và nhiều nghi lễ đặc trưng khác.
+    </p>
+
+    <!-- Ảnh 2 – Nhấn để xem bài viết mô tả lễ cấp sắc -->
+    <a href="https://vov.vn/van-hoa/doc-dao-le-cap-sac-cua-nguoi-san-chi-o-cao-bang-post1090850.vov" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/San_Chay_ceremony.jpg"
+             alt="Lễ cấp sắc của người Sán Chí">
+    </a>
+    <div class="source">Nguồn ảnh: Wikimedia Commons – Bài viết: VOV.vn</div>
+</section>
+<section id="trangphuc">
+    <h2>Trang phục truyền thống</h2>
+    <p>
+        Trang phục của người Sán Chí mang vẻ đẹp mộc mạc nhưng tinh tế. 
+        Phụ nữ thường mặc áo dài chàm, thêu các hoa văn hình học đơn giản, 
+        kết hợp khăn đội đầu và trang sức bạc. Nam giới mặc áo chàm ngắn, 
+        quần ống rộng giúp thuận tiện trong lao động và sinh hoạt.
+    </p>
+
+    <!-- Ảnh 1 – Trang phục nữ, nhấn để xem ảnh lớn -->
+    <a href="https://upload.wikimedia.org/wikipedia/commons/7/7d/San_Chay_women_in_traditional_costume.jpg" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/San_Chay_women_in_traditional_costume.jpg"
+             alt="Trang phục truyền thống của phụ nữ Sán Chí">
+    </a>
+    <div class="source">Nguồn ảnh: Wikimedia Commons</div>
+
+    <!-- Ảnh 2 – Trang phục nam, nhấn để xem ảnh lớn -->
+    <a href="https://upload.wikimedia.org/wikipedia/commons/c/c8/S%C3%A1n_Chay_people%2C_Vietnam_2.jpg" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/S%C3%A1n_Chay_people%2C_Vietnam_2.jpg"
+             alt="Trang phục của nam giới Sán Chí">
+    </a>
+    <div class="source">Nguồn ảnh: Wikimedia Commons</div>
+
+</section>
+<footer>
+    2025 – Giới thiệu dân tộc Sán Chí
+</footer>
+
+<script>
+// Scroll animation
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+    const trigger = window.innerHeight / 5 * 4;
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        if (sectionTop < trigger) {
+            section.classList.add("visible");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+

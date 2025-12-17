@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Ẩm Thực Việt – Nhà Hàng Online</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- BOOTSTRAP -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+body { background: #fffaf4; }
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)),
+    url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero h1 { font-size: 3.5rem; }
+
+.food-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    transition: .3s;
+}
+
+.price {
+    color: #d84315;
+    font-weight: bold;
+}
+
+footer {
+    background: #3e2723;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#">🍜 Ẩm Thực Việt</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="menu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#home">Trang chủ</a></li>
+<li class="nav-item"><a class="nav-link" href="#foods">Món ăn</a></li>
+<li class="nav-item"><a class="nav-link" href="#order">Đặt món</a></li>
+<li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#booking">Đặt bàn</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container text-center">
+<h1>Hương Vị Ẩm Thực Việt</h1>
+<p class="lead">Tinh hoa truyền thống – Trải nghiệm hiện đại</p>
+<a href="#foods" class="btn btn-warning btn-lg mt-3">Khám Phá Ngay</a>
+</div>
+</section>
+
+<!-- FOODS -->
+<section class="container py-5" id="foods">
+<h2 class="text-center mb-4 text-danger">🍲 Thực Đơn Đặc Sắc</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4"><div class="card food-card">
+<img src=https://bizweb.dktcdn.net/thumb/grande/100/489/006/articles/pho-bo-anh-bia.jpg?v=1698658470313>
+<div class="card-body">
+<h5>Phở Bò</h5><p>Nước dùng truyền thống.</p>
+<p class="price">45.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Phở Bò')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKCBtkSPYonBv_mszvjLMtA3Hth7YrGwHSww&s">
+<div class="card-body">
+<h5>Bún Bò Huế</h5><p>Cay nồng chuẩn vị.</p>
+<p class="price">50.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Bún Bò Huế')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQczVS3f7ekVQiE9uNp-RWY_K6qQVY_0srMjw&s">
+<div class="card-body">
+<h5>Bún Chả</h5><p>Thịt nướng than hoa.</p>
+<p class="price">40.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Bún Chả')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_BEyGNxXtr_7w8z-sVo0SushqWzwSvB6xiQ&s">
+<div class="card-body">
+<h5>Bánh Mì</h5><p>Giòn rụm – nhân đầy.</p>
+<p class="price">25.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Bánh Mì')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://i-giadinh.vnecdn.net/2024/03/07/7Honthinthnhphm1-1709800144-8583-1709800424.jpg">
+<div class="card-body">
+<h5>Cơm Tấm</h5><p>Sườn – trứng – bì.</p>
+<p class="price">55.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Cơm Tấm')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMxxz1DLroIkVgbt9EZxv1-FgnqoRhJYnpKQ&s">
+<div class="card-body">
+<h5>Gỏi Cuốn</h5><p>Tôm thịt tươi.</p>
+<p class="price">30.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Gỏi Cuốn')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://www.huongnghiepaau.com/wp-content/uploads/2017/02/cach-lam-banh-xeo-mien-trung.jpg">
+<div class="card-body">
+<h5>Bánh Xèo</h5><p>Vỏ giòn – nhân đậm.</p>
+<p class="price">45.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Bánh Xèo')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqRiVAhIR8ewYL3QzLLoY1LTNT_afAN5VqzA&s">
+<div class="card-body">
+<h5>Chả Giò</h5><p>Chiên giòn thơm.</p>
+<p class="price">35.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Chả Giò')">Đặt món</button>
+</div></div></div>
+
+<div class="col-md-4"><div class="card food-card">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaAti7GkERmh4ezbfcAaUpmvxtxXm49_Bcig&s">
+<div class="card-body">
+<h5>Lẩu Hải Sản</h5><p>Chua cay hấp dẫn.</p>
+<p class="price">199.000đ</p>
+<button class="btn btn-danger w-100" onclick="addOrder('Lẩu Hải Sản')">Đặt món</button>
+</div></div></div>
+
+</div>
+</section>
+
+<!-- ORDER -->
+<section class="container py-5" id="order">
+<h2 class="text-center text-danger">🛒 Đơn Hàng</h2>
+<ul id="orderList" class="list-group mt-3"></ul>
+<p id="empty" class="text-center mt-3">Chưa có món nào.</p>
+</section>
+
+<!-- BOOKING -->
+<div class="modal fade" id="booking">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5>📅 Đặt Bàn</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<input class="form-control mb-2" placeholder="Tên">
+<input class="form-control mb-2" placeholder="SĐT">
+<input class="form-control mb-2" type="date">
+<button class="btn btn-danger w-100">Xác Nhận</button>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="text-center p-4">
+<p>© 2025 Ẩm Thực Việt</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let orderList = document.getElementById("orderList");
+let empty = document.getElementById("empty");
+
+function addOrder(food) {
+    empty.style.display = "none";
+    let li = document.createElement("li");
+    li.className = "list-group-item";
+    li.textContent = food + " - Đã thêm";
+    orderList.appendChild(li);
+}
+</script>
+
+</body>
+</html>

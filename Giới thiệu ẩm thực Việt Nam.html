@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ẩm Thực Việt Nam</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #fffdf6;
+        }
+
+        header {
+            background-color: #d62828;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f77f00;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .food-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .food-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .food-item:hover {
+            transform: scale(1.03);
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .review-section {
+            margin-top: 40px;
+        }
+
+        .review {
+            background: #faf3e0;
+            padding: 15px;
+            border-left: 5px solid #d62828;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #003049;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        .review-form {
+            margin-top: 20px;
+            padding: 20px;
+            background: #ffe8cc;
+            border-radius: 8px;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            background: #d62828;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Ẩm Thực Việt Nam</h1>
+    <p>Hương vị truyền thống - Đậm đà bản sắc ba miền</p>
+</header>
+
+<nav>
+    <a href="#">Trang Chủ</a>
+    <a href="#monan">Món Ăn</a>
+    <a href="#danhgia">Đánh Giá</a>
+</nav>
+
+<div class="banner">
+    <img src="C:\Users\TH2-22\Pictures\download (12).jpg" alt="Ẩm thực Việt Nam">
+</div>
+
+<div class="container">
+
+    <h2 id="monan">🍽️ Các Món Ăn Nổi Bật Của Việt Nam</h2>
+
+    <div class="food-list">
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download.jpg" alt="Phở bò">
+            <h3>Phở Bò</h3>
+            <p>Nước dùng thơm ngọt từ xương bò, biểu tượng ẩm thực Việt Nam.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (1).jpg" alt="Bánh mì">
+            <h3>Bánh Mì</h3>
+            <p>Bánh mì giòn rụm, nhân pate và thịt nguội hấp dẫn.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (2).jpg" alt="Bún chả">
+            <h3>Bún Chả</h3>
+            <p>Đặc sản Hà Nội với thịt nướng thơm và nước chấm hài hòa.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (3).jpg" alt="Bánh cuốn">
+            <h3>Bánh Cuốn</h3>
+            <p>Bánh mỏng mềm, ăn kèm nước mắm ấm và chả ngon.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (4).jpg" alt="Gỏi cuốn">
+            <h3>Gỏi Cuốn</h3>
+            <p>Cuốn tôm thịt tươi mát, nước chấm đậm đà.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (5).jpg" alt="Cơm tấm">
+            <h3>Cơm Tấm</h3>
+            <p>Cơm tấm Sài Gòn với sườn nướng và bì chả hấp dẫn.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (6).jpg" alt="Mì Quảng">
+            <h3>Mì Quảng</h3>
+            <p>Sợi mì vàng, nước dùng đậm đà và bánh tráng mè đặc trưng.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (7).jpg" alt="Bánh xèo">
+            <h3>Bánh Xèo</h3>
+            <p>Bánh vàng giòn, nhân tôm thịt thơm phức.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (8).jpg" alt="Cao lầu">
+            <h3>Cao Lầu</h3>
+            <p>Đặc sản Hội An với sợi mì vàng đặc biệt.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (9).jpg" alt="Hủ tiếu Nam Vang">
+            <h3>Hủ Tiếu Nam Vang</h3>
+            <p>Nước dùng thanh ngọt, topping đa dạng.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (10).jpg" alt="Bún bò Huế">
+            <h3>Bún Bò Huế</h3>
+            <p>Món ăn đậm vị, cay nhẹ và rất thơm.</p>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\TH2-22\Pictures\download (11).jpg" alt="Chả giò">
+            <h3>Chả Giò</h3>
+            <p>Lớp vỏ giòn rụm, nhân thịt mềm ngon.</p>
+        </div>
+
+    </div>
+
+    <!-- PHẦN ĐÁNH GIÁ -->
+    <div class="review-section" id="danhgia">
+        <h2>📝 Đánh Giá Của Khách Hàng</h2>
+
+        <div id="review-list">
+            <div class="review">
+                <strong>Nguyễn Minh:</strong>
+                <p>“Trang web rất đẹp và bổ ích!” ⭐⭐⭐⭐⭐</p>
+            </div>
+        </div>
+
+        <!-- FORM ĐÁNH GIÁ -->
+        <div class="review-form">
+            <h3>Gửi đánh giá của bạn</h3>
+            <input type="text" id="name" placeholder="Tên của bạn">
+            <textarea id="review" rows="4" placeholder="Nội dung đánh giá..."></textarea>
+            <select id="rating">
+                <option value="5">⭐⭐⭐⭐⭐ - 5 sao</option>
+                <option value="4">⭐⭐⭐⭐ - 4 sao</option>
+                <option value="3">⭐⭐⭐ - 3 sao</option>
+                <option value="2">⭐⭐ - 2 sao</option>
+                <option value="1">⭐ - 1 sao</option>
+            </select>
+            <button onclick="addReview()">Gửi đánh giá</button>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Ẩm Thực Việt Nam – All rights reserved.
+</footer>
+
+
+<script>
+    // Tải đánh giá từ localStorage khi mở trang
+    window.onload = function () {
+        const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        const reviewList = document.getElementById("review-list");
+
+        savedReviews.forEach(review => {
+            const newReview = document.createElement("div");
+            newReview.className = "review";
+            newReview.innerHTML = `
+                <strong>${review.name}:</strong>
+                <p>“${review.text}” ${"⭐".repeat(review.rating)}</p>
+            `;
+            reviewList.appendChild(newReview);
+        });
+    };
+
+    function addReview() {
+        const name = document.getElementById("name").value;
+        const reviewText = document.getElementById("review").value;
+        const rating = document.getElementById("rating").value;
+
+        if (name.trim() === "" || reviewText.trim() === "") {
+            alert("Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        const reviewList = document.getElementById("review-list");
+
+        const newReview = document.createElement("div");
+        newReview.className = "review";
+        newReview.innerHTML = `
+            <strong>${name}:</strong>
+            <p>“${reviewText}” ${"⭐".repeat(rating)}</p>
+        `;
+
+        reviewList.appendChild(newReview);
+
+        // Lưu vào localStorage
+        const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+        savedReviews.push({
+            name: name,
+            text: reviewText,
+            rating: rating
+        });
+        localStorage.setItem("reviews", JSON.stringify(savedReviews));
+
+        document.getElementById("name").value = "";
+        document.getElementById("review").value = "";
+    }
+</script>
+<!-- Kết thúc script mới -->
+
+</body>
+</html>

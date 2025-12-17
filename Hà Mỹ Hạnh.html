@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản sắc dân tộc Việt Nam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background-color: #222;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #ff5722;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        h2 {
+            color: #d32f2f;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-bottom: 2px solid #d32f2f;
+            padding-bottom: 5px;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Đánh giá */
+        .form-container {
+            background-color: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.3);
+            width: 500px;
+            margin: 30px auto;
+        }
+        .form-container h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        fieldset {
+            border: 2px solid #2980b9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        legend {
+            font-weight: bold;
+            color: #2980b9;
+            padding: 0 10px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+        .radio-group input[type="radio"] {
+            accent-color: #e91e63; /* màu hồng cho radio khi chọn */
+            transform: scale(1.2);  /* làm to radio */
+            margin-right: 5px;
+        }
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Phần Phiếu Đánh Giá -->
+    <div class="form-container">
+        <h2>Phiếu Đánh Giá</h2>
+
+        <form>
+            <fieldset>
+                <legend>Thông tin học sinh</legend>
+
+                <!-- Dòng 2: Họ và tên -->
+                <label for="hoten">Họ và tên:</label>
+                <input id="hoten" type="text" placeholder="Nhập họ và tên">
+
+                <!-- Dòng 3: Hình thức -->
+                <label>Hình thức:</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" id="tot" name="hinhthuc" value="Tốt">
+                        Tốt
+                    </label>
+                    <label>
+                        <input type="radio" id="khongtot" name="hinhthuc" value="Không tốt">
+                        Không tốt
+                    </label>
+                </div>
+
+                <!-- Dòng 4: Nhận xét -->
+                <label for="nhanxet">Nhận xét:</label>
+                <textarea id="nhanxet" rows="8" placeholder="Nhập nhận xét tại đây..."></textarea>
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Phần giới thiệu bản sắc dân tộc -->
+    <header>
+        <h1>Bản sắc dân tộc Việt Nam</h1>
+    </header>
+
+    <nav>
+     
+        <a href="#Evaluate">Đánh giá</a>
+        <a href="#culture">Văn hóa</a>
+        <a href="#traditions">Phong tục & Lễ hội</a>
+        <a href="#food">Ẩm thực</a>
+        <a href="#history">Lịch sử</a>
+        <a href="#language">Ngôn ngữ</a>
+        <a href="#music">Âm nhạc</a>
+        <a href="#art">Nghệ thuật</a>
+        <a href="#people">Con người</a>
+        <a href="#heritage">Di sản</a>
+        <a href="#geography">Địa lý</a>
+        <a href="#tourism">Du lịch</a>
+        <a href="#education">Giáo dục</a>
+    </nav>
+    <form>
+    
+ 
+    <!-- Mục 1: Văn hóa -->
+    <section id="culture">
+        <h2>Văn Hóa Việt Nam</h2>
+        <p>Văn hóa Việt Nam là sự kết hợp giữa các yếu tố truyền thống và hiện đại. Nó bao gồm nghệ thuật, ngôn ngữ, trang phục và các phong tục tập quán đặc trưng của người dân Việt Nam. Một trong những biểu tượng mạnh mẽ của văn hóa Việt Nam là **Áo Dài** – trang phục truyền thống của phụ nữ Việt Nam, thể hiện sự thanh lịch và duyên dáng.</p>
+         <p>Áo dài là biểu tượng văn hóa nổi bật của Việt Nam, được biết đến rộng rãi trong và ngoài nước. Trang phục này có lịch sử lâu đời, bắt nguồn từ thời kỳ phong kiến, nhưng đến đầu thế kỷ 20, áo dài mới trở nên phổ biến và gắn liền với hình ảnh người phụ nữ Việt Nam. Áo dài có thiết kế đơn giản nhưng tinh tế, với phần thân áo ôm sát cơ thể, tà áo dài chấm gót, giúp tôn lên dáng vẻ thanh thoát, duyên dáng của người mặc.</p>
+       <p>Áo dài thường được làm từ vải lụa, satin hoặc tơ tằm, với các màu sắc và hoa văn đa dạng, thể hiện sự thanh lịch và trang nhã. Phần cổ áo được thiết kế cao, gọn gàng, tạo nên vẻ đẹp thanh thoát, kín đáo nhưng không kém phần quyến rũ. Áo dài có thể được may cho cả nam và nữ, tuy nhiên, áo dài nữ vẫn là loại được ưa chuộng và phổ biến nhất.</p>
+       <p>Áo dài không chỉ là trang phục truyền thống mà còn là một phần không thể thiếu trong các sự kiện quan trọng như lễ hội, cưới hỏi, Tết Nguyên Đán hay các dịp lễ kỷ niệm. Bên cạnh đó, áo dài còn là biểu tượng của sự tự hào, niềm tin và nét đẹp duyên dáng của người phụ nữ Việt Nam, gắn liền với các giá trị văn hóa và truyền thống của dân tộc.</p>
+        <div class="image-container">
+            <img src="https://cophuchoangthanhhue.com/wp-content/uploads/2024/10/Hinh-anh-128-2-600x826.jpeg" alt="Áo Dài - Trang phục truyền thống Việt Nam">
+            <p><em>Áo Dài - Trang phục truyền thống của Việt Nam</em></p>
+        </div>
+    </section>
+
+    <!-- Mục 2: Phong tục và Lễ hội -->
+    <section id="traditions">
+        <h2>Phong Tục và Lễ Hội</h2>
+        <p>Phong tục và lễ hội là những hoạt động không thể thiếu trong đời sống tinh thần của người Việt Nam. Các lễ hội truyền thống như Tết Nguyên Đán, Lễ hội Chùa Hương, và Lễ hội Đền Hùng không chỉ là dịp để người dân thờ cúng tổ tiên mà còn là thời gian để gắn kết cộng đồng, giao lưu và chia sẻ.</p>
+       <p>Phong tục và lễ hội là phần không thể thiếu trong đời sống văn hóa của người Việt Nam, phản ánh những giá trị tinh thần và bản sắc dân tộc. Chúng không chỉ giúp kết nối cộng đồng mà còn tôn vinh những truyền thống lâu đời, khẳng định bản sắc và niềm tự hào dân tộc.</p>
+
+       <p>Phong tục của người Việt Nam có thể kể đến các nghi lễ quan trọng như thờ cúng tổ tiên, cúng rằm, cúng mùng một, và những ngày lễ truyền thống đặc biệt. Những nghi thức này thể hiện lòng kính trọng đối với tổ tiên và các bậc tiền nhân, đồng thời cầu mong sức khỏe, an lành và thịnh vượng cho gia đình</p>
+
+       <p>Lễ hội cũng là một phần quan trọng trong đời sống tinh thần của người Việt, nơi mà người dân thể hiện sự tôn trọng đối với thần linh, tổ tiên và các giá trị văn hóa. Các lễ hội không chỉ là dịp vui chơi, giao lưu mà còn là cơ hội để bảo tồn và phát huy các truyền thống, tập tục của dân tộc qua từng thế hệ. Chúng thường gắn liền với các yếu tố tín ngưỡng, lịch sử và văn hóa đặc trưng của từng vùng miền.</p>
+ 
+       <p>Phong tục và lễ hội ở Việt Nam mang đậm tính cộng đồng, khi mọi người cùng nhau tham gia và chia sẻ những giá trị văn hóa, từ đó góp phần xây dựng một xã hội gắn kết và giàu bản sắc.</p>
+
+        <div class="image-container">
+            <img src="https://pystravel.vn/_next/image?url=https%3A%2F%2Fbooking.pystravel.vn%2Fuploads%2Fposts%2Favatar%2F1735876251.jpg&w=640&q=75" alt="Lễ hội Chùa Hương">
+            <p><em>Lễ hội Chùa Hương - Một trong những lễ hội lớn nhất của người Việt</em></p>
+        </div>
+    
+         <p>Lễ hội Chùa Hương, được tổ chức tại huyện Mỹ Đức, Hà Nội, là một trong những lễ hội lớn và quan trọng nhất của Việt Nam. Diễn ra từ tháng Giêng đến tháng Ba âm lịch, lễ hội thu hút hàng triệu du khách hành hương. Mọi người tham gia lễ hội không chỉ để cầu bình an, sức khỏe mà còn để tận hưởng không khí văn hóa đặc sắc.</p>
+
+         <p>Lễ hội bắt đầu với hành trình chèo thuyền trên sông Đáy, dẫn du khách đến khu vực Chùa Hương. Sau đó, họ tiếp tục leo lên núi để thăm các đền, chùa nằm trên đỉnh. Đây là dịp để mọi người tỏ lòng kính trọng Mẫu Thiên Y Ana – vị thần bảo vệ nhân dân.</p>
+
+         <p>Bên cạnh nghi thức tôn thờ, lễ hội còn có các hoạt động văn hóa dân gian như múa hát, chèo thuyền, và trò chơi truyền thống. Lễ hội Chùa Hương không chỉ là một dịp cầu phúc, mà còn là cơ hội để tìm hiểu và trải nghiệm sâu sắc văn hóa, tín ngưỡng của người Việt.</p>
+       
+    <!-- Mục 3: Ẩm thực -->
+    <section id="food">
+        <h2>Ẩm Thực Việt Nam</h2>
+        <p>Ẩm thực Việt Nam rất phong phú và đa dạng, phản ánh sự kết hợp hài hòa giữa các nền văn hóa Đông và Tây, cũng như sự sáng tạo của con người Việt Nam. Các món ăn nổi tiếng như phở, bún chả, bánh cuốn, nem cuốn... đã trở thành những đại diện đặc trưng của nền ẩm thực nước nhà.</p>
+        <div class="image-container">
+            <img src="https://vcdn1-giadinh.vnecdn.net/2025/11/17/Pho-bo-Ha-Noi-7-vnexpress-1763-7388-9585-1763372391.jpg?w=680&h=0&q=100&dpr=1&fit=crop&s=7Q_gwXI4cYwioth8MElTMQ" alt="Món Phở truyền thống">
+            <p><em>Phở - Món ăn quốc hồn quốc túy của Việt Nam</em></p>
+        </div>
+    </section>
+
+    <!-- Mục 4: Lịch sử -->
+    <section id="history">
+        <h2>Lịch Sử Việt Nam</h2>
+        <p>Việt Nam có một lịch sử dài và phong phú, trải qua nhiều triều đại và các cuộc chiến tranh giành độc lập. Từ thời kỳ Hùng Vương cho đến các triều đại như Lý, Trần, Lê, và Đinh, Việt Nam đã luôn phải đối mặt với nhiều thử thách và chiến đấu để giữ gìn nền độc lập dân tộc.</p>
+        <p>Việt Nam có vị trí địa lý đặc biệt với bờ biển dài 3.260 km, giáp Trung Quốc, Lào, Campuchia và Biển Đông. Đất nước có địa hình đa dạng, từ đồng bằng như Sông Hồng, Sông Cửu Long, đến dãy núi Hoàng Liên Sơn và cao nguyên Đà Lạt. Với khí hậu nhiệt đới gió mùa, Việt Nam sở hữu nhiều tài nguyên thiên nhiên quý giá như than đá, dầu mỏ và khoáng sản, cùng hệ sinh thái phong phú, là nền tảng quan trọng cho phát triển kinh tế, du lịch và bảo tồn môi trường.</p>
+    </section>
+
+    <!-- Mục 5: Ngôn ngữ -->
+    <section id="language">
+        <h2>Ngôn Ngữ Việt Nam</h2>
+        <p>Tiếng Việt là ngôn ngữ chính thức của Việt Nam, được sử dụng rộng rãi trong giao tiếp, giáo dục và văn hóa. Tiếng Việt có hệ thống âm điệu và thanh điệu rất phong phú, là một trong những đặc điểm dễ nhận diện của ngôn ngữ này.</p>
+        <p>Ngôn ngữ Việt Nam giàu hình ảnh, dễ dàng diễn đạt những tình cảm, ý tưởng một cách đầy cảm xúc và dễ đi vào lòng người. Các cách nói bóng bẩy, mượt mà, cùng với sự kết hợp của thiên nhiên và cảm xúc con người, giúp ngôn ngữ Việt trở nên mềm mại, duyên dáng và mang đậm tính nghệ thuật. Những từ ngữ ấy không chỉ là công cụ giao tiếp mà còn là cầu nối tinh thần, gắn kết con người với nhau và với những giá trị văn hóa, truyền thống của dân tộc.</p>
+    </section>
+
+    <!-- Mục 6: Âm nhạc -->
+    <section id="music">
+        <h2>Âm Nhạc và Nghệ Thuật</h2>
+  
+        <p>Âm nhạc Việt Nam có sự kết hợp độc đáo giữa các yếu tố truyền thống và hiện đại, với nhiều thể loại phong phú, từ ca trù, hát chèo, hát bội đến dân ca quan họ. Âm nhạc truyền thống Việt Nam không chỉ thể hiện trong các lễ hội, mà còn là phương tiện để bày tỏ cảm xúc và thể hiện bản sắc văn hóa.</p>
+
+        <h3>1. Ca Trù</h3>
+        <p>Ca trù là một thể loại âm nhạc cung đình đặc trưng của Việt Nam, được UNESCO công nhận là di sản văn hóa phi vật thể. Đây là loại hình nghệ thuật kết hợp giữa hát và nhạc cụ truyền thống như trống, đàn đáy và phách.</p>
+        <div class="image-container">
+            <img src="https://baochauelec.com/cdn/images/tin-tuc/ca-tru.jpg" alt="Ca Trù">
+            <p><em>Ca Trù - Nghệ thuật âm nhạc truyền thống của Việt Nam</em></p>
+        </div>
+
+        <h3>2. Hát Bội</h3>
+        <p>Hát bội, hay còn gọi là sân khấu hát tuồng, là một loại hình nghệ thuật biểu diễn kết hợp giữa âm nhạc, múa và kịch nói. Đây là một hình thức nghệ thuật dân gian đặc trưng của Việt Nam, đặc biệt phổ biến ở miền Bắc.</p>
+        <div class="image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWZ8UiZ6mfmtJh33ZPtx62Usy1bGVM23I82w&s" alt="Hát Bội">
+            <p><em>Hát Bội - Một trong những nghệ thuật biểu diễn truyền thống của Việt Nam</em></p>
+        </div>
+
+        <h3>3. Dân Ca Quan Họ</h3>
+        <p>Dân ca quan họ Bắc Ninh là một thể loại dân ca đặc trưng của người Bắc Bộ, được UNESCO công nhận là di sản văn hóa phi vật thể của nhân loại. Đây là loại hình âm nhạc dân gian đặc sắc, chủ yếu được hát trong các lễ hội và ngày hội của cộng đồng.</p>
+        <div class="image-container">
+            <img src="https://hoangthanhthanglong.vn/wp-content/uploads/2023/05/quanho1.jpg" alt="Dân Ca Quan Họ">
+            <p><em>Dân ca Quan Họ - Di sản âm nhạc độc đáo của Việt Nam</em></p>
+        </div>
+    </section>
+
+    <!-- Mục 7: Nghệ thuật -->
+    <section id="art">
+        <h2>Nghệ Thuật Truyền Thống Việt Nam</h2>
+        <p>Múa rối nước, thêu tay, và các hình thức nghệ thuật dân gian khác thể hiện sự sáng tạo, tinh tế và cầu kỳ của người dân Việt Nam. Đây là những hình thức nghệ thuật được bảo tồn qua nhiều thế hệ và vẫn giữ được vị trí quan trọng trong văn hóa đương đại.</p>
+       
+        <h3>1. Múa Rối Nước</h3>
+        <p>Múa rối nước là một nghệ thuật biểu diễn dân gian độc đáo, xuất phát từ miền Bắc Việt Nam. Đây là thể loại nghệ thuật mà các con rối được điều khiển trong nước, thể hiện những câu chuyện dân gian, huyền thoại và lịch sử của dân tộc.</p>
+        <div class="image-container">
+            <img src="https://vnp.1cdn.vn/2023/01/10/dtg08154-2.jpg" alt="Múa rối nước">
+            <p><em>Múa rối nước - Nghệ thuật biểu diễn truyền thống của Việt Nam</em></p>
+        </div>
+
+        <h3>2. Thêu Tay Truyền Thống</h3>
+        <p>Thêu tay là một trong những nghề thủ công truyền thống của Việt Nam, mang đậm giá trị văn hóa và nghệ thuật. Những tác phẩm thêu tay không chỉ đẹp mà còn chứa đựng sự khéo léo và tâm huyết của người nghệ nhân.</p>
+        <div class="image-container">
+            <img src="https://file.hstatic.net/1000215898/file/tranh-theu-2-15924745464892060145955__1__42a96d108f16419b8e95268cedd07ef0_1024x1024.jpg" alt="Thêu tay Việt Nam">
+            <p><em>Thêu tay truyền thống - Nghệ thuật thủ công tinh xảo của Việt Nam</em></p>
+        </div>
+    </section>
+
+    <!-- Mục 8: Con người -->
+    <section id="people">
+        <h2>Con Người Việt Nam</h2>
+        <p>Con người Việt Nam nổi bật với sự hiếu khách, giản dị và tình cảm gia đình sâu sắc. Trong xã hội Việt, gia đình là trung tâm, nơi gắn kết các thế hệ. Người Việt rất coi trọng đạo lý, tôn sư trọng đạo và luôn hướng về tổ tiên. Điều này thể hiện qua các phong tục thờ cúng, lễ hội truyền thống, và trong mỗi dịp Tết Nguyên Đán, người Việt thường tổ chức cúng ông Công ông Táo, tưởng nhớ tổ tiên. Tính cách người Việt rất thân thiện và sẵn sàng giúp đỡ người khác trong cộng đồng.</p>
+       <div class="image-container">
+            <img src="https://scontent.fhan4-3.fna.fbcdn.net/v/t1.6435-9/129412393_2787899158165348_8937642261691697382_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_ohc=Q0HdgjSe6tkQ7kNvwEkz-u1&_nc_oc=Adl5uNTaINVgT7sM5iYyds7SK_J82Ro7OeT-GJryObLOq94s5pPLJu1gAT_jMib7hVI&_nc_zt=23&_nc_ht=scontent.fhan4-3.fna&_nc_gid=TQLUhnwXCuZD5y1vF1B8Vg&oh=00_Afm7rrzvooYB_2enzAx70Wus5lrcXLQWPMSPQDABzYODdw&oe=6955C751" alt="Con người Việt nam">
+            <p><em>Sự hiếu khách của con người Việt nam</em></p>
+        </div>
+        <p>Người Việt có một văn hóa giao tiếp đặc trưng, thể hiện qua sự tôn trọng, lịch sự và lễ phép. Trong giao tiếp, người Việt thường dùng kính ngữ để thể hiện sự tôn trọng với người lớn tuổi hoặc người có địa vị cao hơn. Phong thái ứng xử của người Việt cũng thể hiện trong các bữa ăn, nơi mà sự lịch sự, nhường nhịn là điều cần thiết. Mọi người thường không nói thẳng, mà có xu hướng dùng ẩn dụ hoặc cách nói khéo léo để tránh làm tổn thương người khác</p>
+            <div class="image-container">
+            <img src="https://vanhoatinnguong.vn/Uploads/images/van%20hoa%20ung%20xu%20trong%20mam%20com%20nguoi%20viet.jpg" alt="Con người Việt nam">
+            <p><em>Phong thái ứng xử của người Việt cũng thể hiện trong các bữa ăn</em></p>
+        </div>
+        
+
+    <!-- Mục 9: Di sản -->
+    <!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Mục Di sản -->
+    <section id="heritage">
+        <h2>Di Sản Văn Hóa Việt Nam</h2>
+        <p>Việt Nam sở hữu một kho tàng di sản văn hóa phong phú, bao gồm các di tích lịch sử, các làng nghề truyền thống và các phong tục tập quán độc đáo. Những di sản này không chỉ có giá trị về mặt lịch sử mà còn là những tài sản quý giá giúp kết nối quá khứ với hiện tại và tương lai của dân tộc.</p>
+
+        <h3>1. Di tích lịch sử</h3>
+        <p>Việt Nam có rất nhiều di tích lịch sử nổi tiếng, trong đó phải kể đến **Cố đô Huế**, **Đô thị cổ Hội An**, và **Vịnh Hạ Long**. Các di tích này không chỉ mang đậm dấu ấn lịch sử mà còn là minh chứng sống động cho nền văn minh lâu đời của dân tộc Việt Nam.</p>
+        <div class="image-container">
+            <img src="https://cdn.nhandan.vn/images/a66ff20f6c1e5a179e007244f7bfd5c84ff8e4f24f92f2adad15397f1c9349bd0e293d208e672d2bd7abbb6271f37b26eb6c781cff96167633ab689c01a172c1/halongbay-3501.jpg" alt="Vịnh Hạ Long">
+            <p><em>Vịnh Hạ Long - Di sản thiên nhiên thế giới</em></p>
+        </div>
+
+        <h3>2. Các làng nghề truyền thống</h3>
+        <p>Những làng nghề truyền thống như **làng gốm Bát Tràng**, **làng lụa Vạn Phúc**, và **làng tranh Đông Hồ** không chỉ góp phần tạo ra những sản phẩm văn hóa độc đáo mà còn là một phần không thể thiếu trong đời sống người dân Việt Nam.</p>
+        <div class="image-container">
+            <img src="http://toquoc.mediacdn.vn/2019/7/25/batranghnm-15640461742831196360114.jpg" alt="Làng gốm Bát Tràng">
+            <p><em>Làng gốm Bát Tràng - Nơi lưu giữ nghề truyền thống lâu đời</em></p>
+        </div>
+
+        <h3>3. Phong tục và lễ hội</h3>
+        <p>Các phong tục và lễ hội truyền thống như **Lễ hội Chùa Hương**, **Tết Nguyên Đán**, và **Lễ hội Đền Hùng** không chỉ là dịp để người dân tưởng nhớ tổ tiên mà còn là những ngày để cộng đồng đoàn kết, giao lưu văn hóa và bảo tồn các giá trị tinh thần của dân tộc.</p>
+        <div class="image-container">
+            <img src="https://hoangthanhthanglong.vn/wp-content/uploads/2023/05/hoian1.jpg" alt="Lễ hội Chùa Hương">
+            <p><em>Lễ hội Chùa Hương - Lễ hội văn hóa nổi tiếng tại Việt Nam</em></p>
+        </div>
+
+        <h3>4. Di sản phi vật thể</h3>
+        <p>Việt Nam còn sở hữu các di sản văn hóa phi vật thể như **Ca trù**, **Hát chèo**, **Múa rối nước**, và **Dân ca quan họ Bắc Ninh**. Những di sản này đã được UNESCO công nhận và là những di sản văn hóa truyền khẩu, thể hiện sự sáng tạo và tài năng của người dân Việt Nam.</p>
+        <div class="image-container">
+            <img src="https://consosukien.vn/pic/News/Nam_2022/ro-i-nuo-c-loa-i-hi-nh-nghe-thuat-dan-gian-doc-dao-cua-vie-t-nam.jpg" alt="Múa rối nước Việt Nam">
+            <p><em>Múa rối nước - Nghệ thuật truyền thống độc đáo của Việt Nam</em></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Giới thiệu về Di sản Văn hóa Việt Nam</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+    <!-- Mục 10: Địa lý -->
+    <section id="geography">
+        <h2>Địa Lý Việt Nam</h2>
+        <p>Với hình dạng chữ S, Việt Nam sở hữu một cảnh quan đa dạng từ đồng bằng ven biển đến các dãy núi hùng vĩ, cùng các khu rừng nguyên sinh và những bãi biển tuyệt đẹp. Vị trí địa lý đặc biệt này tạo điều kiện thuận lợi cho sự phát triển kinh tế, văn hóa và du lịch.</p>
+        <div class="image-container">
+            <img src="https://scratch.hourofcode.vn/wp-content/uploads/2024/04/6-vung-kinh-te-Viet-Nam.png" alt="Địa lí Việt Nam">
+            <p><em>Vị trí địa lí-Vùng kinh tế Việt nam</em></p>
+        </div>
+    </section>
+
+    <!-- Mục 11: Du lịch -->
+    <section id="tourism">
+        <h2>Du Lịch Việt Nam</h2>
+        <p>Việt Nam là điểm đến hấp dẫn với nhiều địa danh nổi tiếng như **Vịnh Hạ Long**, **Phố cổ Hội An**, **Cố đô Huế**, và **Sài Gòn** năng động. Những địa điểm này không chỉ có giá trị lịch sử mà còn mang đến trải nghiệm văn hóa đặc sắc cho du khách.</p>
+          <div class="tourism-location">
+        <h3>Vịnh Hạ Long</h3>
+        <p>Vịnh Hạ Long nổi bật với hàng nghìn đảo đá vôi, là kỳ quan thiên nhiên thế giới và điểm đến không thể bỏ qua.</p>
+        <div class="image-container">
+            <img src="https://cdn.nhandan.vn/images/a66ff20f6c1e5a179e007244f7bfd5c84ff8e4f24f92f2adad15397f1c9349bd0e293d208e672d2bd7abbb6271f37b26eb6c781cff96167633ab689c01a172c1/halongbay-3501.jpg" alt="Vịnh Hạ Long" />
+       
+      
+        <div class="tourism-location">
+        <h3>Phố cổ Hội An</h3>
+        <p>Hội An là một di sản văn hóa thế giới, nổi bật với những con phố cổ kính và những chiếc đèn lồng rực rỡ.</p>
+        <div class="image-container">
+            <img src="https://hoangthanhthanglong.vn/wp-content/uploads/2023/05/hoian1.jpg" alt="Phố cổ Hội An" />
+        </div>
+    </div>
+    </section>
+
+    <!-- Mục 12: Giáo dục -->
+    <section id="education">
+        <h2>Giáo Dục Việt Nam</h2>
+        <p>Giáo dục là một phần quan trọng trong việc phát triển đất nước Việt Nam. Việt Nam đã chú trọng đầu tư vào giáo dục từ các cấp học mầm non đến đại học, với mục tiêu nâng cao chất lượng nguồn nhân lực, thúc đẩy sự sáng tạo và phát triển bền vững.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Giới thiệu về Bản sắc dân tộc Việt Nam</p>
+    </footer>
+
+    <script>
+        // JavaScript để thêm lớp "visible" khi người dùng cuộn trang
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const windowHeight = window.innerHeight;
+            
+            sections.forEach(function(section) {
+                const sectionTop = section.getBoundingClientRect().top;
+                
+                if (sectionTop < windowHeight - 150) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

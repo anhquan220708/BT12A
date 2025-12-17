@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu Lookism</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+        }
+        header {
+            background: #1e1e1e;
+            color: #fff;
+            padding: 25px;
+            text-align: center;
+        }
+        section {
+            padding: 30px 50px;
+            background: #fff;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 { color: #333; }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #eee;
+            margin-top: 20px;
+        }
+        .img-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .img-box img {
+            max-width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.15);
+        }
+        a.read-link {
+            display: inline-block;
+            padding: 10px 18px;
+            background: #2c7ae0;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        a.read-link:hover {
+            background: #1f5fb3;
+        }
+
+        /* Link thông báo */
+        #success {
+            display: none;
+            margin-top: 15px;
+        }
+
+        #success a {
+            display: inline-block;
+            padding: 12px 18px;
+            background: #d4f7d2;
+            color: #1d7d36;
+            border-left: 4px solid #3aa84f;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #success a:hover {
+            background: #b9eab5;
+        }
+
+        button {
+            margin-top: 12px;
+            padding: 10px 18px;
+            background: #2c7ae0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover { background: #1f5fb3; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Lookism – Webtoon nổi tiếng từ Hàn Quốc</h1>
+</header>
+
+<section id="gioi-thieu">
+    <h2>Giới thiệu</h2>
+    <p><img src="https://i.pinimg.com/736x/bb/3c/f7/bb3cf78908440b3b06898fb0fd9935da.jpg"></p>
+    <p><strong>Lookism</strong> là một webtoon nổi tiếng của tác giả Park Tae-jun, phát hành trên Naver Webtoon. Bộ truyện xoay quanh vấn đề phân biệt ngoại hình và hành trình thay đổi cuộc đời của nhân vật chính Park Hyung Suk.</p>
+</section>
+
+<section id="noi-dung">
+    <h2>Nội dung chính</h2>
+    <p>Lookism kể về Park Hyung Suk – một học sinh bị bắt nạt vì béo và kém thu hút...</p>
+
+    <div class="img-box">
+        <img src="https://baro7.com/cdn/shop/files/lookism-manhwa-649397_grande.jpg?v=1721241848" alt="Park Hyung Suk Lookism">
+    </div>
+
+    <ul>
+        <li>Bạo lực học đường</li>
+        <li>Phân biệt ngoại hình</li>
+        <li>Ước mơ và nỗ lực vượt khó</li>
+        <li>Thế giới ngầm và võ thuật đường phố</li>
+    </ul>
+</section>
+
+<section id="chuyen-the">
+    <h2>Chuyển thể</h2>
+    <div class="img-box">
+        <img src="https://image.lag.vn/upload/news/22/09/26/Lookism-chuyen-the-anime-2_ENAW.jpg" alt="Lookism Anime">
+    </div>
+    <ul>
+        <li><strong>Anime Netflix</strong> – nhận được nhiều đánh giá tích cực.</li>
+    </ul>
+</section>
+
+<!-- ===================== VIDEO MP4 BẠN YÊU CẦU ===================== -->
+<section id="video">
+    <h2>Video giới thiệu</h2>
+    <video controls width="100%" style="border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.15);">
+        <source src="lkm.mp4" type="video/mp4">
+    </video>
+</section>
+<!-- ================================================================= -->
+
+<section id="form">
+    <h2>Gửi phản hồi của bạn</h2>
+
+    <form id="feedbackForm" action="#" method="POST">
+        <label for="name">Tên của bạn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email của bạn:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Nội dung phản hồi:</label>
+        <textarea id="message" name="message"></textarea>
+
+        <button type="submit">Gửi phản hồi</button>
+    </form>
+
+    <div id="success">
+        <a href="#form">Đã gửi phản hồi</a>
+    </div>
+</section>
+
+<script>
+const form = document.getElementById('feedbackForm');
+const success = document.getElementById('success');
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    success.style.display = 'block';
+    form.reset();
+});
+</script>
+
+<footer>
+    <p>&copy; 2025 – Giới thiệu Lookism. Nội dung mang tính tham khảo.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ẩm Thực Tuyên Quang</title>
+    <style>
+        /* Các phần style của trang */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f9f9f9;
+        }
+
+        header h1 {
+            font-size: 44px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-top: 0;
+        }
+
+        nav {
+            background: #0d6efd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 40px 10%;
+        }
+
+        h2 {
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+
+        .food-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 18px;
+            border-radius: 10px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .food-item img {
+            width: 250px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        footer {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 30px;
+        }
+
+        /* === Form đánh giá === */
+        .container {
+            width: 420px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 5px;
+        }
+
+        .options {
+            margin-top: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .checkbox-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .checkbox-item {
+            margin-bottom: 10px;
+        }
+
+        .review-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style cho form đánh giá */
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:disabled {
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Ẩm Thực Tuyên Quang</h1>
+        <p>Khám phá hương vị núi rừng xứ Tuyên</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#gioithieu">Giới thiệu</a>
+        <a href="#monan">Món ăn nổi bật</a>
+        <a href="#danhgia">Đánh giá</a>
+        <a href="#lienhe">Liên hệ</a>
+    </nav>
+
+    <!-- Section Giới thiệu -->
+    <section id="gioithieu">
+        <h2>Giới thiệu</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 25px; align-items: center; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+            <img src="C:\Users\CMS\Documents\Downloads\Tuyên Quang.jpg" alt="Tuyên Quang" style="width: 320px; border-radius: 12px; object-fit: cover; flex-shrink: 0;">
+            <p style="font-size: 17px; line-height: 1.6; flex: 1;">
+                Tuyên Quang, mảnh đất linh thiêng của cách mạng và giàu truyền thống văn hóa, còn được biết đến là nơi lưu giữ kho tàng ẩm thực phong phú của nhiều dân tộc sinh sống trên địa bàn. 
+                Hương vị ẩm thực Tuyên Quang nổi bật bởi sự mộc mạc, tự nhiên nhưng vô cùng tinh tế, phản ánh nếp sống hòa mình vào núi rừng. Những nguyên liệu quen thuộc như gà đồi thả tự nhiên, gạo nếp nương, lá cẩm, lá gừng hay gia vị đặc trưng của người vùng cao đã tạo nên những món ăn đậm đà bản sắc. 
+                Từ sắc màu hấp dẫn của xôi ngũ sắc, vị thanh nhẹ của bánh gio, đến hương thơm nồng đặc trưng của thịt trâu gác bếp, tất cả đã góp phần làm nên một nền ẩm thực vừa lạ vừa quen, lưu giữ dấu ấn đặc biệt trong lòng du khách.
+                Tuyên Quang không chỉ đẹp ở cảnh sắc thiên nhiên mà còn cuốn hút bởi những món ăn mang đậm hồn quê và hương vị núi rừng.
+            </p>
+        </div>
+    </section>
+
+    <!-- Section Món ăn nổi bật -->
+    <section id="monan">
+        <h2>Những món ăn nổi bật</h2>
+
+        <div class="food-item">
+            <img src="C:\Users\CMS\Documents\Downloads\Gà Đồi.jpg" alt="Gà đồi Tuyên Quang">
+            <div>
+                <h3>Gà đồi Tuyên Quang</h3>
+                <p>GGà đồi Tuyên Quang là một trong những món ăn đặc sản nổi tiếng nhất, được yêu thích không chỉ bởi hương vị thơm ngon mà còn bởi cách thức nuôi thả tự nhiên trên những ngọn đồi bao quanh. Những con gà được nuôi thả trong môi trường tự nhiên, ăn cỏ, ăn các loại hạt và cây dại, khiến thịt gà có màu sắc vàng óng và hương vị thơm ngon khác biệt.
+
+                    Khi chế biến, gà đồi thường được làm sạch, ướp gia vị đặc trưng, sau đó nướng hoặc luộc để giữ nguyên vị ngọt tự nhiên. 
+                     Món ăn này thường được dùng kèm với một ít rau sống và gia vị chấm đặc biệt như muối tiêu, ớt để tạo nên hương vị đậm đà. Nếu bạn là người yêu thích các món ăn từ gà, Gà đồi Tuyên Quang chắc chắn sẽ là một trải nghiệm đáng nhớ.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\CMS\Documents\Downloads\Xôi ngũ sắc.jpg" alt="Xôi ngũ sắc">
+            <div>
+                <h3>Xôi ngũ sắc</h3>
+                <p>Xôi ngũ sắc không chỉ là một món ăn, mà còn là biểu tượng của sự hòa hợp giữa thiên nhiên và con người. Với năm màu sắc rực rỡ tượng trưng cho ngũ hành, xôi ngũ sắc không chỉ hấp dẫn về mặt thị giác mà còn thể hiện được sự tinh tế trong văn hóa ẩm thực của người dân Tuyên Quang. 
+				Các màu sắc của xôi được tạo nên từ lá rừng tự nhiên, như lá cẩm, lá nếp, lá sắn, mang đến màu sắc đẹp mắt và hương vị đặc biệt.
+				Mỗi màu sắc của xôi ngũ sắc không chỉ có giá trị về mặt hình thức mà còn có ý nghĩa sâu sắc về phong thủy và sức khỏe. 
+				Khi ăn, xôi mềm dẻo, thơm ngon, hòa quyện cùng với các món ăn kèm như thịt lợn, chả cá, hoặc gà đồi. 
+				Món xôi này thường được dùng trong các dịp lễ hội, cưới hỏi hoặc những dịp đặc biệt để cầu mong sự may mắn và hạnh phúc.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\CMS\Documents\Downloads\Bánh gio.jpg" alt="Bánh gio Tuyên Quang">
+            <div>
+                <h3>Bánh gio</h3>
+                <p>Bánh gio là món bánh dân dã, quen thuộc của người dân Tuyên Quang, đặc biệt là vào những ngày lễ Tết. Bánh được làm từ gạo nếp, được trộn với một ít nước của cây gio, tạo nên một màu xanh nhẹ nhàng, thanh mát. 
+				Sau khi nấu chín, bánh gio có độ dẻo, mịn và vị ngọt tự nhiên rất đặc biệt.
+
+                Điều thú vị là bánh gio thường được ăn kèm với mật mía, một đặc sản của Tuyên Quang, để tạo nên sự kết hợp hoàn hảo giữa vị ngọt thanh mát của bánh và mật mía. 
+                Đây là món ăn không thể thiếu trong những buổi tụ họp gia đình hay trong các lễ hội truyền thống, thể hiện sự mộc mạc, chân chất nhưng vô cùng đậm đà của ẩm thực miền núi.</p>
+            </div>
+        </div>
+
+        <div class="food-item">
+            <img src="C:\Users\CMS\Documents\Downloads\Thịt trâu gác bếp.jpg" alt="Thịt trâu gác bếp">
+            <div>
+                <h3>Thịt trâu gác bếp</h3>
+                <p>Thịt trâu gác bếp là một món ăn đặc sản nổi tiếng không chỉ của Tuyên Quang mà còn của nhiều vùng núi phía Bắc. Đây là món ăn được chế biến từ thịt trâu tươi, sau khi được tẩm ướp gia vị đặc biệt, thịt trâu sẽ được treo lên gác bếp, hun khói trong một thời gian dài. 
+				Quá trình này giúp thịt trâu thấm đều gia vị và có hương vị đặc trưng, thơm lừng, mềm nhưng không bị khô.
+
+                 Món thịt trâu gác bếp thường được ăn kèm với các loại rau sống và cơm nếp, giúp cân bằng hương vị và tạo sự hấp dẫn cho bữa ăn. 
+				 Thịt trâu gác bếp không chỉ là món ăn ngon mà còn thể hiện sự khéo léo của người dân Tuyên Quang trong việc bảo quản thực phẩm, đồng thời gắn liền với những lễ hội, tập tục lâu đời của các dân tộc miền núi nơi đây.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Liên hệ -->
+    <section id="lienhe">
+        <h2>Liên hệ</h2>
+        <p>Nếu bạn muốn đóng góp nội dung hoặc tìm hiểu thêm về ẩm thực Tuyên Quang, vui lòng gửi email: <b>amthuctuyenquang@gmail.com</b></p>
+    </section>
+
+    <!-- Section Đánh giá -->
+    <section id="danhgia">
+        <div class="review-box">
+            <h3>Đánh Giá Trang Web
+			
+ 
+
+            <div class="input-group">
+                <label for="name">Tên người gửi:</label>
+                <input type="text" id="name" placeholder="Nhập tên của bạn...">
+            </div>
+
+            <div class="input-group">
+                <label>Hình thức:</label>
+                <div class="checkbox-list">
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="hinhthuc" value="tot"> Tốt
+                    </label>
+                    <label class="checkbox-item">
+                        <input type="checkbox" name="hinhthuc" value="khong_tot"> Không tốt
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Nhận xét:</label>
+                <div class="checkbox-list">
+                    <label class="checkbox-item"><input type="checkbox" value="de_su_dung"> Dễ sử dụng</label>
+                    <label class="checkbox-item"><input type="checkbox" value="kho_su_dung"> Khó sử dụng</label>
+                    <label class="checkbox-item"><input type="checkbox" value="giao_dien_dep"> Giao diện đẹp</label>
+                    <label class="checkbox-item"><input type="checkbox" value="can_cai_thien"> Cần cải thiện</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="comment">Góp ý của bạn:</label>
+                <textarea id="comment" placeholder="Hãy viết nhận xét của bạn..." rows="4"></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="submitReview()">Gửi đánh giá</button>
+
+            <div class="success-message" id="successMessage" style="display: none;">
+                Đánh giá đã được gửi thành công!
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2025 Ẩm Thực Tuyên Quang
+    </footer>
+
+    <script>
+        function submitReview() {
+            const name = document.getElementById('name').value;
+            const formComment = document.getElementById('comment').value;
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+
+            let feedbackType = [];
+            let commentTypes = [];
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.name === 'hinhthuc') {
+                    feedbackType.push(checkbox.value);
+                } else {
+                    commentTypes.push(checkbox.value);
+                }
+            });
+
+            if (!name || !formComment) {
+                alert("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            const reviewSummary = `
+                Tên người gửi: ${name}\n
+                Hình thức đánh giá: ${feedbackType.join(', ')}\n
+                Nhận xét: ${commentTypes.join(', ')}\n
+                Góp ý: ${formComment}
+            `;
+            console.log(reviewSummary);
+
+            // Hiển thị thông báo thành công
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Reset form
+            document.getElementById('name').value = '';
+            document.getElementById('comment').value = '';
+            checkboxes.forEach(checkbox => checkbox.checked = false);
+        }
+    </script>
+</body>
+
+</html>

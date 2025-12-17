@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danh Lam Thắng Cảnh Tuyên Quang</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --primary-color: #333;
+        --bg-color: #f8f9fb;
+        --card-radius: 0.9rem;
+        --shadow: rgba(0,0,0,0.1);
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: var(--bg-color);
+        color: var(--primary-color);
+        line-height: 1.6;
+    }
+
+    /* Header hero */
+    .hero {
+        min-height: 80vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+            url(https://images.pexels.com/photos/2649403/pexels-photo-2649403.jpeg) center/cover no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.9);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 0;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        box-shadow: 0 0.125rem 0.375rem var(--shadow);
+        z-index: 1000;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--primary-color);
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.2s;
+    }
+
+    nav a:hover {
+        color: #007bff;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding-top: 5rem;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin: 3rem 0 2rem 0;
+        font-weight: 700;
+    }
+
+    /* Cards */
+    .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem; 
+    margin-bottom: 4rem;
+    }
+
+    .card {
+    background: white;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    box-shadow: 0 0.35rem 1rem var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    }
+
+    .card-content {
+    padding: 1.5rem; 
+    }
+
+    .card-content h3 {
+    font-size: 1.45rem; 
+    }
+
+    .card-content p {
+    font-size: 1.05rem; 
+    opacity: 0.9;
+    }
+
+
+    /* --- CAROUSEL STYLE ADD --- */
+    .carousel {
+        width: 90%;
+        max-width: 1200px;
+        overflow: hidden;
+        border-radius: 12px;
+        margin: 3rem auto;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        background: #fff;
+    }
+
+    .track {
+        display: flex;
+        width: max-content;
+        animation: scroll 40s linear infinite;
+    }
+
+    .carousel .card {
+    flex: 0 0 460px; 
+    height: 380px;  
+    margin: 14px;
+    border-radius: 14px;
+    }
+
+    .carousel .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+
+
+    .carousel .card:hover {
+        transform: scale(1.05);
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 2rem; }
+        .hero p { font-size: 0.9rem; }
+        nav a { font-size: 0.85rem; }
+    }
+    
+    /* --- FEEDBACK STYLE --- */
+    #feedback-section {
+        margin-bottom: 4rem;
+    }
+
+    .feedback-box {
+        background: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0.3rem 1rem rgba(0,0,0,0.12);
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .feedback-box h3 {
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    .stars {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .stars span {
+        font-size: 2rem;
+        cursor: pointer;
+        color: #ccc;
+        transition: 0.2s;
+    }
+
+    .stars span:hover,
+    .stars span.active,
+    .stars span.hover {
+        color: #ffbf00; /* vàng */
+    }
+
+    textarea {
+        width: 100%;
+        height: 120px;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 0.7rem;
+        border: 1px solid #ddd;
+        resize: none;
+        margin-bottom: 1rem;
+    }
+
+    #submit-feedback {
+        width: 100%;
+        padding: 0.9rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: #007bff;
+        border: none;
+        color: white;
+        border-radius: 0.7rem;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    #submit-feedback:hover {
+        background: #0056b3;
+    }
+
+    .feedback-result {
+        text-align: center;
+        margin-top: 1rem;
+        font-weight: 600;
+        color: green;
+        font-size: 1.05rem;
+    }
+
+
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="#na-hang">Na Hang – Lâm Bình</a>
+    <a href="#thac-mo">Thác Mơ</a>
+    <a href="#den-y-la">Đền Ỷ La</a>
+    <a href="#cot-co">Cột cờ Lũng Cú</a>
+    <a href="#ma-pi-leng">Đèo Mã Pí</a>
+    <a href="#cao-nguyen-da">Cao nguyên đá Đồng Văn</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Khám Phá Tuyên Quang</h1>
+    <p>Vùng đất của núi rừng xanh thẳm và những danh thắng tuyệt đẹp</p>
+</section>
+
+<!-- 🌟 CAROUSEL TRƯỢT VÔ CỰC -->
+<div class="carousel">
+    <div class="track">
+        <div class="card"><img src="https://kinhnghiemdulich.gody.vn/wp-content/uploads/2023/04/danh-lam-thang-canh-o-tuyen-quang-696x510.jpg"></div>
+        <div class="card"><img src="https://scontent.iocvnpt.com/resources/portal/Images/TQG/ttcntt.tqg/Tin%20tuc/bai_viet_nam_2025/r2_931643433.png"></div>
+        <div class="card"><img src="https://statics.vinwonders.com/Tuyen-Quang-Vietnam_1740756641.jpg"></div>
+        <div class="card"><img src="https://sgtravel.vn/wp-content/uploads/2021/01/tin-tuc-cot-co-lung-cu-saigon-travel.jpg"></div>
+        <div class="card"><img src="https://danhnamtravel.vn/Uploads/images/hagiang/hagiang-1/caonguyendongavan-3.jpg"></div>
+        <div class="card"><img src="https://dulichkhatvongviet.com/wp-content/uploads/2017/08/dinh-thu-ho-vuong.jpg"></div>
+        <div class="card"><img src="https://sovhttdltuyenquang.vn/wp-content/uploads/2023/09/den-bach-than-tuyen-quang.jpg"></div>
+
+        <!-- Lặp -->
+        <div class="card"><img src="https://kinhnghiemdulich.gody.vn/wp-content/uploads/2023/04/danh-lam-thang-canh-o-tuyen-quang-696x510.jpg"></div>
+        <div class="card"><img src="https://scontent.iocvnpt.com/resources/portal/Images/TQG/ttcntt.tqg/Tin%20tuc/bai_viet_nam_2025/r2_931643433.png"></div>
+        <div class="card"><img src="https://statics.vinwonders.com/Tuyen-Quang-Vietnam_1740756641.jpg"></div>
+        <div class="card"><img src="https://sgtravel.vn/wp-content/uploads/2021/01/tin-tuc-cot-co-lung-cu-saigon-travel.jpg"></div>
+        <div class="card"><img src="https://danhnamtravel.vn/Uploads/images/hagiang/hagiang-1/caonguyendongavan-3.jpg"></div>
+        <div class="card"><img src="https://dulichkhatvongviet.com/wp-content/uploads/2017/08/dinh-thu-ho-vuong.jpg"></div>
+        <div class="card"><img src="https://sovhttdltuyenquang.vn/wp-content/uploads/2023/09/den-bach-than-tuyen-quang.jpg"></div>
+    </div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+    <h2 class="section-title">Danh Lam Thắng Cảnh Nổi Bật</h2>
+
+    <div class="grid">
+        <!-- Na Hang -->
+        <div class="card" id="na-hang">
+            <img src="https://viettrekking.vn/wp-content/uploads/2023/05/thumb.png">
+            <div class="card-content"><h3>Khu Du Lịch Na Hang – Lâm Bình</h3>
+                <p>Khu Du lịch Na Hang – Lâm Bình là Danh lam thắng cảnh quốc gia đặc biệt, nổi tiếng với lòng hồ thủy điện được mệnh danh là "Hạ Long trên cạn". Khu vực này thu hút du khách nhờ cảnh quan núi đá vôi bao quanh hồ (có Hòn Cọc Vài, Thác Khuổi Nhi) và trải nghiệm văn hóa cộng đồng của các dân tộc Tày, Dao.</p>
+            </div>
+        </div>
+
+        <!-- Thác Mơ -->
+        <div class="card" id="thac-mo">
+            <img src="https://statics.vinwonders.com/thac-mo-tuyen-quang_1730129631.jpg">
+            <div class="card-content"><h3>Thác Mơ – Na Hang</h3>
+                <p>Thác Mơ (Thác Pác Ban), nằm trong Khu bảo tồn thiên nhiên Na Hang – Lâm Bình, là một Thắng cảnh Quốc gia được xếp hạng năm 2006.Thác có vẻ đẹp hùng vĩ với nhiều tầng nước, chảy giữa núi rừng trùng điệp. Đây là điểm du lịch sinh thái nổi tiếng, thu hút du khách đến chiêm ngưỡng, tắm thác và khám phá lòng hồ Na Hang.</p>
+            </div>
+        </div>
+
+        <!-- Đền Ỷ La -->
+        <div class="card" id="den-y-la">
+            <img src="https://admin.vov.gov.vn/UploadFolder/KhoTin/Images/UploadFolder/VOVVN/Images/sites/default/files/styles/large/public/2025-02/den_y_la.jpg">
+            <div class="card-content"><h3>Đền Ỷ La – TP. Tuyên Quang</h3>
+                <p>Đền Mẫu Ỷ La được xây dựng năm 1743 theo kiến trúc thờ Mẫu. Đền là di tích lịch sử văn hóa, kiến trúc nghệ thuật có giá trị, hiện còn lưu giữ nhiều cổ vật quý hiếm từ thế kỷ XIX-XX. Đây là nơi sinh hoạt tín ngưỡng và là điểm du lịch thu hút khách thập phương.</p>
+            </div>
+        </div>
+
+        <!-- Cột Cờ -->
+        <div class="card" id="cot-co">
+            <img src="https://lolochaihagiang.vn/wp-content/uploads/2024/12/gioi-thieu-cot-co-lung-cu.jpg">
+            <div class="card-content"><h3>Cột cờ Lũng Cú – Hà Giang</h3>
+                <p>Cột cờ Lũng Cú là một biểu tượng thiêng liêng tại địa đầu Tổ quốc. Lá cờ rộng 54 mét vuông, tượng trưng cho 54 dân tộc của Việt Nam. Công trình này không chỉ thể hiện chủ quyền lãnh thổ mà còn là một điểm du lịch nổi tiếng, thu hút du khách đến khám phá và tìm hiểu về lịch sử, văn hóa địa phương.</p>
+            </div>
+        </div>
+
+        <!-- Mã Pí Lèng -->
+        <div class="card" id="ma-pi-leng">
+            <img src="https://mia.vn/media/uploads/blog-du-lich/chinh-phuc-deo-ma-pi-leng-tu-dai-dinh-deo-cua-vung-nui-dat-bac-6-1642064878.jpeg">
+            <div class="card-content"><h3>Đèo Mã Pí Lèng</h3>
+                <p>Đèo Mã Pí Lèng là một trong "tứ đại đỉnh đèo" hùng vĩ và hiểm trở nhất Việt Nam, nằm trên tuyến đường Hạnh Phúc thuộc địa phận tỉnh Tuyên Quang. Con đèo này nổi tiếng với vẻ đẹp thiên nhiên ngoạn mục và được coi là một kiệt tác của tạo hóa và con người</p>
+            </div>
+        </div>
+
+        <!-- Đồng Văn -->
+        <div class="card" id="cao-nguyen-da">
+            <img src="https://baotuyenquang.com.vn/file/4028eaa4679b32c401679c0c74382a7e/4028eaa57cfdf90f017cfeb6ffe1248e/082022/dsc02233_20220815150644.jpg">
+            <div class="card-content"><h3>Cao nguyên đá – Đồng Văn</h3>
+                <p>Cao nguyên đá Đồng Văn là Công viên địa chất toàn cầu UNESCO nằm ở tỉnh Tuyên Quang, nổi tiếng với vẻ đẹp thiên nhiên hùng vĩ và văn hóa bản địa đặc sắc. Nơi đây trải dài trên địa bàn 23 xã, phường ( thuộc 4 huyện cũ ): Quản Bạ, Yên Minh, Đồng Văn và Mèo Vạc.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- PHẦN ĐÁNH GIÁ & NHẬN XÉT -->
+<div class="container" id="feedback-section">
+    <h2 class="section-title">Đánh Giá & Nhận Xét</h2>
+
+    <div class="feedback-box">
+        <h3>Chia sẻ cảm nhận của bạn</h3>
+
+        <!-- Rating Stars -->
+        <div class="stars" id="rating-stars">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+        </div>
+
+        <!-- Comment -->
+        <textarea placeholder="Nhập nhận xét của bạn..." id="feedback-text"></textarea>
+
+        <button id="submit-feedback">Gửi đánh giá</button>
+
+        <p class="feedback-result" id="feedback-result"></p>
+    </div>
+</div>
+
+
+<footer>
+    &copy; 2025 – Hoàng Anh Quân
+</footer>
+
+<script>
+    const stars = document.querySelectorAll("#rating-stars span");
+    const result = document.getElementById("feedback-result");
+    let rating = 0;
+
+    stars.forEach(star => {
+        star.addEventListener("mouseover", () => {
+            stars.forEach(s => s.classList.remove("hover"));
+            for (let i = 0; i < star.dataset.value; i++) {
+                stars[i].classList.add("hover");
+            }
+        });
+
+        star.addEventListener("mouseout", () => {
+            stars.forEach(s => s.classList.remove("hover"));
+        });
+
+        star.addEventListener("click", () => {
+            rating = star.dataset.value;
+            stars.forEach(s => s.classList.remove("active"));
+            for (let i = 0; i < rating; i++) {
+                stars[i].classList.add("active");
+            }
+        });
+    });
+
+    document.getElementById("submit-feedback").addEventListener("click", () => {
+        const text = document.getElementById("feedback-text").value.trim();
+
+        if (rating === 0) {
+            alert("Vui lòng chọn số sao!");
+            return;
+        }
+
+        if (text.length < 5) {
+            alert("Nhận xét quá ngắn!");
+            return;
+        }
+
+        result.textContent = `Cảm ơn bạn đã đánh giá ${rating} sao!`;
+        document.getElementById("feedback-text").value = "";
+    });
+</script>
+
+</body>
+</html>

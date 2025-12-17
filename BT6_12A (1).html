@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyên Quang - Sắc màu Huyền thoại và Thiên nhiên</title>
+    
+    <style>
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            color: #00796b; 
+        }
+        
+        section {
+            padding: 60px 5%;
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            background-color: #004d40;
+            padding: 15px 5%;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar a {
+            color: #ffb300;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            font-weight: bold;
+            font-size: 1em;
+            transition: color 0.3s, background-color 0.3s;
+            border-radius: 5px;
+        }
+        
+        .navbar a:hover {
+            background-color: #00796b;
+            color: white;
+        }
+
+        .hero-section {
+            background: url('') no-repeat center center/cover;
+            height: 80vh; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); 
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            background-image: linear-gradient(to top, rgba(0, 121, 107, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 900px;
+            padding: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 5.5em;
+            color: #fff;
+            text-shadow: 4px 4px #ffb300; 
+        }
+
+        .tagline {
+            font-style: normal;
+            font-size: 1.8em;
+            margin-top: 0;
+            font-weight: bold;
+            color: #ffb300;
+        }
+        
+        .main-container {
+            display: flex;
+            max-width: 1400px;
+            margin: 30px auto;
+            position: relative;
+            padding: 0 15px;
+        }
+
+        .content-area {
+            flex: 3; 
+            padding-right: 30px;
+        }
+
+        .content-section {
+            background-color: #fff;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
+            border-left: 5px solid #ffb300; 
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); 
+        }
+
+        .content-section h2 {
+            border-bottom: 4px solid #4db6ac;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: left;
+            font-size: 2.2em;
+        }
+        
+        .highlight-item {
+            display: flex;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        
+        .highlight-item img {
+            width: 350px; 
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #00796b;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight-item img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-item h3 {
+            margin-top: 0;
+            color: #d84315;
+            font-size: 1.5em;
+        }
+        
+        .highlight-item p, .content-section ul {
+            font-size: 1.1em;
+        }
+        
+        .content-section ul {
+            padding-left: 25px;
+            list-style: disc;
+            color: #00796b;
+        }
+        .content-section ul li {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .image-gallery-sidebar {
+            flex: 1; 
+            background-color: #4db6ac; 
+            padding: 25px 20px;
+            box-shadow: -6px 0 15px rgba(0, 0, 0, 0.2); 
+            position: sticky; 
+            top: 0; 
+            height: 100vh; 
+            overflow: hidden;
+            border-radius: 10px 0 0 10px;
+        }
+        
+        .image-gallery-sidebar h3 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #fff;
+            background-color: #00796b;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            animation: infinite-scroll-y 30s linear infinite; 
+        }
+
+        .carousel-slide img {
+            width: 100%; 
+            height: 300px; 
+            object-fit: cover;
+            flex-shrink: 0; 
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 3px solid #ffb300;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s;
+        }
+        
+        .carousel-container:hover .carousel-slide {
+            animation-play-state: paused;
+        }
+        
+        .carousel-slide img:hover {
+             transform: scale(1.03);
+             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes infinite-scroll-y {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-1550px); } 
+        }
+
+        .feedback {
+            background-color: #fff3e0; 
+            text-align: center;
+            padding: 60px 20%;
+            border-top: 5px solid #ffb300;
+        }
+        
+        .rating-container {
+            margin-top: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .star-rating {
+            display: inline-block;
+            direction: rtl;
+            unicode-bidi: bidi-override;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            color: #ccc;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: color 0.3s;
+        }
+        
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #ffb300;
+        }
+        
+        .star-rating input:checked ~ label {
+            color: #ffb300; 
+        }
+
+        .comment-area {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #004d40;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background-color: #004d40;
+            color: #4db6ac;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 1em;
+            border-top: 5px solid #ffb300;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 4em;
+            }
+            .main-container {
+                flex-direction: column; 
+            }
+            .content-area {
+                padding-right: 0;
+                width: 100%;
+            }
+            .image-gallery-sidebar {
+                position: relative; 
+                height: 450px; 
+                top: 0;
+                height: auto;
+                border-radius: 10px;
+            }
+            .carousel-slide {
+                flex-direction: row; 
+                animation: infinite-scroll-x 15s linear infinite; 
+            }
+            .carousel-slide img {
+                width: 300px;
+                height: 400px;
+                margin-right: 15px;
+            }
+            @keyframes infinite-scroll-x {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-1550px); } 
+            }
+            .highlight-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            .highlight-item img {
+                width: 100%;
+                max-width: 400px;
+                height: auto;
+            }
+            .feedback {
+                padding: 40px 5%;
+            }
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 5px;
+            }
+            .navbar a {
+                padding: 8px 10px;
+                font-size: 0.9em;
+            }
+        }
+        
+        @media (max-width: 600px) {
+             .hero-content h1 {
+                font-size: 3em;
+             }
+             .hero-content .tagline {
+                 font-size: 1.4em;
+             }
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section" id="top">
+        <div class="hero-content">
+            <h1>TUYÊN QUANG</h1>
+            <p class="tagline">Sắc màu Lễ hội, Hùng vĩ Thiên nhiên</p>
+            <p>Khám phá vùng đất lịch sử, nơi Bác Hồ và Trung ương Đảng đã lãnh đạo Tổng khởi nghĩa. Từ di tích Tân Trào đến Hồ Na Hang, Tuyên Quang hứa hẹn mang lại những trải nghiệm độc đáo về văn hóa, lịch sử và sinh thái.</p>
+        </div>
+    </header>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#top" style="color: white; font-size: 1.2em;">Tuyên Quang</a>
+        </div>
+        <div class="nav-links">
+            <a href="#gioi-thieu">Tổng quan</a>
+            <a href="#lich-su">Lịch sử</a>
+            <a href="#thien-nhien">Thiên nhiên</a>
+            <a href="#am-thuc">Ẩm thực</a>
+            <a href="#danh-gia">Đánh giá</a>
+        </div>
+    </nav>
+    
+    <div class="main-container">
+        
+        <div class="content-area">
+            
+            <section class="content-section" id="gioi-thieu">
+                <h2>🌍 Vị trí Địa lý và Tổng quan</h2>
+                <div class="highlight-item">
+                    <img src="https://khudothi.vn//wp-content/uploads/2023/10/ban-do-quy-hoach-phat-trien-tinh-tuyen-quang.jpg" alt="Bản đồ Tuyên Quang">
+                    <div>
+                        <p>Tuyên Quang là tỉnh nằm ở vùng Đông Bắc Việt Nam, diện tích tự nhiên của tỉnh Tuyên Quang trước khi có những thay đổi lớn về địa giới hành chính (thường được gọi là Tuyên Quang cũ) là khoảng 5.868 km² (hoặc 586.800 ha). Địa hình chủ yếu là đồi núi, tạo điều kiện cho phát triển du lịch sinh thái và kinh tế lâm nghiệp. Đặc biệt, Thành phố Tuyên Quang là trung tâm phát triển nhanh chóng, nổi bật với kiến trúc đô thị hiện đại xen lẫn các di sản lịch sử.</p>
+                      
+                        <p>Tuyên Quang đang thu hút đầu tư mạnh mẽ vào du lịch nghỉ dưỡng và nông nghiệp công nghệ cao. Vị trí chiến lược giữa Thủ đô Hà Nội và các tỉnh biên giới phía Bắc tạo điều kiện giao thương thuận lợi.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="lich-su">
+                <h2>🇻🇳 Di sản Văn hóa - Lịch sử Cách mạng</h2>
+                <div class="highlight-item">
+                    <img src="https://tuyenquang.dcs.vn/Image/Large/202166153728_29919.jpg" alt="Khu di tích Tân Trào">
+                    <div>
+                        <h3>Khu di tích lịch sử Tân Trào</h3>
+                        <p>Được coi là "Thủ đô Khu giải phóng", nơi Bác Hồ cùng Trung ương Đảng lãnh đạo Cách mạng. Du khách đến đây không chỉ để tìm hiểu lịch sử mà còn để cảm nhận không khí thiêng liêng và bình yên của núi rừng. </p>
+                        <ul>
+                            <li>Cây đa Tân Trào: Biểu tượng lịch sử quan trọng.</li>
+                            <li>Lán Nà Nưa: Nơi ở giản dị của Chủ tịch Hồ Chí Minh.</li>
+                            <li>Di tích Chủ tịch Hồ Chí Minh làm việc: Tọa lạc tại huyện Sơn Dương.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="highlight-item reverse">
+                    <div>
+                        <h3>Lễ hội Thành Tuyên</h3>
+                        <p>Sự kiện nổi bật nhất, thu hút hàng triệu du khách. Lễ hội Trung thu với những mô hình đèn lồng khổng lồ, sáng tạo, phản ánh đời sống và văn hóa của người dân Tuyên Quang.</p>
+                        <p>Ngoài ra, Tuyên Quang còn là nơi sinh sống của nhiều dân tộc thiểu số như Tày, Dao, Mông, với những nét văn hóa, trang phục và lễ hội truyền thống đa dạng.</p>
+                    </div>
+                    <img src="https://khodulieu.sohoa.tuyenquang.gov.vn/congthongtin/media/f71f41222e7adf239a0030c128186ec1.jpg" alt="Lễ hội Thành Tuyên">
+                </div>
+            </section>
+
+            <section class="content-section" id="thien-nhien">
+                <h2>🏞️ Kỳ quan Thiên nhiên Na Hang - Lâm Bình</h2>
+                <div class="highlight-item">
+                    <img src="https://khodulieu.sohoa.tuyenquang.gov.vn/congthongtin/uploads/khu-du-lich-na-hang-2.jpg" alt="Hồ Na Hang">
+                    <div>
+                        <h3>Hồ Na Hang - "Hạ Long trên cạn"</h3>
+                        <p>Khu du lịch sinh thái Na Hang - Lâm Bình là điểm đến không thể bỏ qua. Hồ nước trong xanh, bao quanh bởi những dãy núi đá vôi trùng điệp, tạo nên khung cảnh ngoạn mục. Du thuyền trên hồ, ngắm Thác Khuổi Nhi và núi Pác Tạ là những trải nghiệm tuyệt vời.</p>
+                        <p>Vùng hồ cũng là nơi có đa dạng sinh học cao, thích hợp cho du lịch khám phá và nghiên cứu.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-item reverse">
+                    <div>
+                        <h3>Nghỉ dưỡng Suối khoáng nóng Mỹ Lâm</h3>
+                        <p>Nguồn nước khoáng lưu huỳnh tự nhiên tại Mỹ Lâm là điểm đến lý tưởng cho du lịch nghỉ dưỡng và trị liệu sức khỏe. Khu vực này đang được đầu tư phát triển thành trung tâm Wellness (chăm sóc sức khỏe) hàng đầu miền Bắc.</p>
+                    </div>
+                    <img src="https://statics.vinwonders.com/vi-tri-suoi-khoang-my-lam_1732006010.jpg" alt="Suối khoáng nóng Mỹ Lâm">
+                </div>
+            </section>
+
+            <section class="content-section" id="am-thuc">
+                <h2>🍜 Khám phá Ẩm thực Truyền thống</h2>
+                <div class="highlight-item">
+                    <img src="https://photo2.tinhte.vn/data/attachment-files/2024/11/8533604_z6032928098371-884898e2e66738a3540fc9965fd291d9.jpg" alt="Món ăn Tuyên Quang">
+                    <div>
+                        <h3>Hương vị núi rừng và đồng quê</h3>
+                        <p>Ẩm thực Tuyên Quang là sự hòa quyện giữa các sản vật địa phương và bí quyết chế biến truyền thống của các dân tộc thiểu số. Hãy thử những món ăn sau:</p>
+                        <ul>
+                            <li>Chè Shan Tuyết (Chè Bát Tiên): Hương vị đặc trưng, sản phẩm OCOP nổi tiếng.</li>
+                            <li>Thịt lợn đen Na Hang: Thịt săn chắc, thơm ngon đặc trưng.</li>
+                            <li>Bánh dày người Tày: Thường được làm trong các dịp lễ tết.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        
+        <div class="image-gallery-sidebar">
+            <h3>📸 Khoảnh khắc Tuyên Quang</h3>
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="https://a.tcnn.vn//Images/images/unnamed(70).jpg" alt="Thành phố Tuyên Quang">
+                    <img src="https://statics.vinwonders.com/khu-du-lich-sinh-thai-na-hang-tuyen-quang_1736327122.jpg" alt="Khu du lịch sinh thía Na Hang">
+                    <img src="https://statics.vinwonders.com/thanh-nha-mac-tuyen-quang_1736327219.jpg" alt="Thành nhà Mạc">
+                    <img src="https://ecotour.com.vn/wp-content/uploads/2025/06/dia-diem-du-lich-tuyen-quang.jpg" alt="Hồ Na Hang">
+                    <img src="https://ecotour.com.vn/wp-content/uploads/2025/05/thac-mo-tuyen-quang.jpg" alt="Thác Mơ">
+                    <img src="https://ecotour.com.vn/wp-content/uploads/2025/05/khu-di-tich-lich-su-tan-trao.jpg" alt="Cây đa Tân Trào">
+                    <img src="https://ecotour.com.vn/wp-content/uploads/2025/05/bao-tang-tinh-tuyen-quang.jpg" alt="Bảo tàng tỉnh Tuyên Quang">
+                    
+                    <img src="https://ecotour.com.vn/wp-content/uploads/2025/05/quang-truong-nguyen-tat-thanh-tuyen-quang.jpg" alt="Quảng trường Nguyễn Tất Thành">
+                    <img src="https://ecotour.com.vn/wp-content/uploads/2025/05/dong-song-long-tuyen-quang.jpg" alt="Động Song Long">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <section class="feedback" id="danh-gia">
+        <h2>⭐️ Đánh giá Chi tiết & Góp ý</h2>
+        <p>Vui lòng cho chúng tôi biết trải nghiệm tổng thể của bạn bằng cách đánh giá số sao và để lại nhận xét.</p>
+        
+        <div class="rating-container">
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" onclick="selectRating(5)"><label for="star5" title="Tuyệt vời - 5 sao">★</label>
+                <input type="radio" id="star4" name="rating" value="4" onclick="selectRating(4)"><label for="star4" title="Rất tốt - 4 sao">★</label>
+                <input type="radio" id="star3" name="rating" value="3" onclick="selectRating(3)"><label for="star3" title="Tốt - 3 sao">★</label>
+                <input type="radio" id="star2" name="rating" value="2" onclick="selectRating(2)"><label for="star2" title="Tạm được - 2 sao">★</label>
+                <input type="radio" id="star1" name="rating" value="1" onclick="selectRating(1)"><label for="star1" title="Chưa tốt - 1 sao">★</label>
+            </div>
+            
+            <p id="star-message" style="font-weight: bold; color: #00796b;">Vui lòng chọn số sao.</p>
+
+            <textarea class="comment-area" id="comment" rows="4" placeholder="Nhận xét chi tiết của bạn về Tuyên Quang (Tối đa 200 ký tự)..."></textarea>
+            
+            <button class="submit-btn" onclick="submitReview()">Gửi Đánh Giá</button>
+            <p id="submit-message" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Trang web Tuyên Quang Khám phá. | Được thiết kế bởi Đinh Việt Quang. | Liên hệ: dinhvietquang2008tq@gmail.com</p>
+    </footer>
+
+    <script>
+        let currentRating = 0;
+        const starMessage = document.getElementById('star-message');
+        const submitMessage = document.getElementById('submit-message');
+
+        function selectRating(rating) {
+            currentRating = rating;
+            const messages = {
+                5: 'Tuyệt vời! Cảm ơn bạn đã đánh giá 5 sao.',
+                4: 'Rất tốt! Chúng tôi rất vui vì bạn hài lòng.',
+                3: 'Tốt. Chúng tôi sẽ cố gắng làm tốt hơn!',
+                2: 'Tạm được. Cần cải thiện ở đâu, bạn vui lòng ghi nhận xét.',
+                1: 'Chưa tốt. Chúng tôi xin lỗi vì trải nghiệm này.'
+            };
+            starMessage.textContent = messages[rating];
+            submitMessage.textContent = '';
+        }
+
+        function submitReview() {
+            const comment = document.getElementById('comment').value;
+            
+            if (currentRating === 0) {
+                submitMessage.textContent = '❌ Vui lòng chọn số sao trước khi gửi đánh giá.';
+                submitMessage.style.color = '#f44336';
+                return;
+            }
+
+            if (comment.length > 200) {
+                submitMessage.textContent = '❌ Nhận xét quá dài (Tối đa 200 ký tự).';
+                submitMessage.style.color = '#f44336';
+                return;
+            }
+
+            submitMessage.textContent = `✅ Cảm ơn bạn đã gửi đánh giá ${currentRating} sao! Nhận xét: "${comment.substring(0, 50)}..."`;
+            submitMessage.style.color = '#4caf50';
+
+            document.querySelectorAll('.star-rating input').forEach(input => input.disabled = true);
+            document.getElementById('comment').disabled = true;
+            document.querySelector('.submit-btn').disabled = true;
+
+            setTimeout(() => {
+                document.querySelectorAll('.star-rating input').forEach(input => {
+                    input.disabled = false;
+                    input.checked = false;
+                });
+                document.getElementById('comment').disabled = false;
+                document.getElementById('comment').value = '';
+                document.querySelector('.submit-btn').disabled = false;
+                currentRating = 0;
+                starMessage.textContent = 'Vui lòng chọn số sao.';
+                submitMessage.textContent = '';
+            }, 10000); 
+        }
+    </script>
+</body>
+</html>
